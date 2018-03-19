@@ -35,9 +35,6 @@ set undodir=~/.vim/undo//
 "Highlight found words
 set hlsearch
 
-"Cancel search with Escape
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-
 "Highlight parenthesis
 set showmatch
 
