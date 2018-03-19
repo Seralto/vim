@@ -14,6 +14,7 @@ let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 map <leader>p :NERDTree ~/Projects<CR>
 
+"Keep more info in memory to speed things up:
 set hidden
 set history=100
 
@@ -24,25 +25,42 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
-set autoindent
+set autoindent 
+
+"Swap files
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 "Highlight found words
 set hlsearch
 
+"Cancel search with Escape
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
 "Highlight parenthesis
 set showmatch
 
-"NERDtree
-" autocmd vimenter * NERDTree "Always open the tree when booting Vim,
-" autocmd VimEnter * wincmd p "but don’t focus it:
-" autocmd VimEnter * NERDTree ~/Projects
+"Remove whitespaces on save. 
+autocmd BufWritePre * :%s/\s\+$//e
 
-let NERDTreeMapActivateNode='<right>' "Hit the right arrow to open a node
-let NERDTreeIgnore=['\~$', '\.swp'] "Do not display some useless files in the tree
-let g:NERDTreeWinSize=40 "Size
+"Hit the right arrow to open a node
+let NERDTreeMapActivateNode='<right>' 
 
-nmap <leader>n :NERDTreeToggle<CR>  "Toggle display of the tree
-nmap <leader>j :NERDTreeFind<CR> "Locate the focused file in the tree
+"Do not display some useless files in the tree
+let NERDTreeIgnore=['\~$', '\.swp'] 
+
+"Size
+let g:NERDTreeWinSize=40
+
+"Re-Open previously opened file
+nnoremap <Leader><Leader> :e#<CR>
+
+"Toggle display of the tree
+nmap <leader>n :NERDTreeToggle<CR>  
+
+"Locate the focused file in the tree
+nmap <leader>j :NERDTreeFind<CR>
 
 "Move between tabs
 nnoremap <C-h> <C-w>h
@@ -65,3 +83,4 @@ nnoremap <leader>- 10<C-w><
 
 " CSS sort
 nmap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
+
