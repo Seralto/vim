@@ -12,6 +12,7 @@ set number
 let mapleader=" "
 
 map <leader>s :source ~/.vimrc<CR>
+map <leader>p :NERDTree ~/Projects<CR>
 
 set hidden
 set history=100
@@ -34,7 +35,7 @@ set showmatch
 "NERDtree
 " autocmd vimenter * NERDTree "Always open the tree when booting Vim,
 " autocmd VimEnter * wincmd p "but don’t focus it:
-autocmd VimEnter * NERDTree ~/Projects
+" autocmd VimEnter * NERDTree ~/Projects
 
 let NERDTreeMapActivateNode='<right>' "Hit the right arrow to open a node
 let NERDTreeIgnore=['\~$', '\.swp'] "Do not display some useless files in the tree
@@ -64,6 +65,3 @@ nnoremap <leader>- 10<C-w><
 
 " CSS sort
 nmap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
-
-
-
