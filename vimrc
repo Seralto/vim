@@ -62,3 +62,8 @@ map <C-s> :w
 nnoremap <leader>+ 10<C-w>>
 nnoremap <leader>- 10<C-w><
 
+" CSS sort
+nmap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
+
+
+
