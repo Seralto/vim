@@ -14,6 +14,15 @@ let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 map <leader>p :NERDTree ~/Projects<CR>
 
+"Re-Open previously opened file
+nnoremap <Leader><Leader> :e#<CR>
+
+"Toggle display of the tree
+nmap <leader>n :NERDTreeToggle<CR>  
+
+"Locate the focused file in the tree
+nmap <leader>j :NERDTreeFind<CR>
+
 "Keep more info in memory to speed things up:
 set hidden
 set history=100
@@ -35,6 +44,9 @@ set undodir=~/.vim/undo//
 "Highlight found words
 set hlsearch
 
+"Cancel highlight found words 
+nnoremap \\ :noh<return>
+
 "Highlight parenthesis
 set showmatch
 
@@ -50,14 +62,8 @@ let NERDTreeIgnore=['\~$', '\.swp']
 "Size
 let g:NERDTreeWinSize=40
 
-"Re-Open previously opened file
-nnoremap <Leader><Leader> :e#<CR>
-
-"Toggle display of the tree
-nmap <leader>n :NERDTreeToggle<CR>  
-
-"Locate the focused file in the tree
-nmap <leader>j :NERDTreeFind<CR>
+"Gitgutter space always 1
+set signcolumn=yes
 
 "Move between tabs
 nnoremap <C-h> <C-w>h
