@@ -4,7 +4,7 @@ execute pathogen#infect()
 filetype on
 syntax on
 colorscheme onedark
-" colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
 
 set colorcolumn=120
 set number
@@ -61,9 +61,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 "Hit the right arrow to open a node
 let NERDTreeMapActivateNode='<right>'
 
-"Do not display some useless files in the tree
-let NERDTreeIgnore=['\~$', '\.swp']
-
 "Size
 let g:NERDTreeWinSize=40
 
@@ -76,7 +73,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Buffers
+"Move lines
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
+
+"Buffers
 nnoremap <S-w>       :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <S-Left>    :bprevious<CR>
 nnoremap <S-Right>   :bnext<CR>
@@ -95,3 +98,5 @@ nmap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 "Copy all to clipboard
 nmap <C-y> ggyG
 
+"Change cursor on Nomal/Insert mode
+:autocmd InsertEnter,InsertLeave * set cul!
