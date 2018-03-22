@@ -1,18 +1,25 @@
 execute pathogen#infect()
 
-"Theme
+"Basic setup
+set colorcolumn=120
+set number
+filetype indent on
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
 filetype on
 syntax on
 colorscheme onedark
 "colorscheme Tomorrow-Night
 
-set colorcolumn=120
-set number
-
 let mapleader=" "
 
 map <leader>s :source ~/.vimrc<CR>
 
+"----------NERDTree----------
 "Open NERDTree in ~/Projects
 map <leader>p :NERDTree ~/Projects<CR>
 
@@ -28,18 +35,20 @@ nmap <leader>n :NERDTreeToggle<CR>
 "Locate the focused file in the tree
 nmap <leader>j :NERDTreeFind<CR>
 
+"Hit the right arrow to open a node
+let NERDTreeMapActivateNode='<right>'
+
+"Size
+let g:NERDTreeWinSize=40
+
+"Resize NERDtree
+nnoremap <leader>+ 10<C-w>>
+nnoremap <leader>- 10<C-w><
+"----------NERDTree----------
+
 "Keep more info in memory to speed things up:
 set hidden
 set history=100
-
-"Indentation
-filetype indent on
-set nowrap
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
-set autoindent
 
 "Swap files
 set backupdir=~/.vim/backup//
@@ -58,12 +67,6 @@ set showmatch
 "Remove whitespaces on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
-"Hit the right arrow to open a node
-let NERDTreeMapActivateNode='<right>'
-
-"Size
-let g:NERDTreeWinSize=40
-
 "Gitgutter space always 1
 set signcolumn=yes
 
@@ -76,8 +79,6 @@ nnoremap <C-l> <C-w>l
 "Move lines
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
-inoremap <S-Up> <Esc>:m-2<CR>
-inoremap <S-Down> <Esc>:m+<CR>
 
 "Buffers
 nnoremap <S-w>       :bp<bar>sp<bar>bn<bar>bd<CR>
@@ -87,10 +88,6 @@ nnoremap <C-t>       :new<CR>
 
 "Save
 map <C-s> :w<CR>
-
-"Resize NERDtree
-nnoremap <leader>+ 10<C-w>>
-nnoremap <leader>- 10<C-w><
 
 "CSS sort
 nmap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
