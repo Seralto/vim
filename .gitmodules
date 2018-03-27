@@ -37,3 +37,9 @@
 [submodule "bundle/indentLine"]
 	path = bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "bundle/vim-ctrlp-ag"]
+	path = bundle/vim-ctrlp-ag
+	url = https://github.com/lokikl/vim-ctrlp-ag
+[submodule "bundle/vim-autoformat"]
+	path = bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat

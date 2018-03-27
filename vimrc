@@ -44,8 +44,19 @@ let g:NERDTreeWinSize=40
 "Resize NERDtree
 nnoremap <leader>+ 10<C-w>>
 nnoremap <leader>- 10<C-w><
-"----------NERDTree----------
 
+"----------CtrlP----------
+"Ignore stuff
+let g:ctrlp_custom_ignore = 'node_modules|git'
+
+"Only current folder
+let g:ctrlp_working_path_mode = 'ra'
+
+"----------Autoformat----------
+noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
+
+"----------Genaral config----------
 "Keep more info in memory to speed things up:
 set hidden
 set history=100
@@ -97,3 +108,16 @@ nmap <C-y> ggyG
 
 "Change cursor on Nomal/Insert mode
 :autocmd InsertEnter,InsertLeave * set cul!
+
+"IndentLine
+nnoremap <leader>/ :IndentLinesToggle<CR>
+
+"CtrlP ag
+nnoremap <c-f> :CtrlPag<cr>
+vnoremap <c-f> :CtrlPagVisual<cr>
+nnoremap <leader>ca :CtrlPagLocate
+nnoremap <leader>cp :CtrlPagPrevious<cr>
+let g:ctrlp_ag_ignores = '--ignore .git
+    \ --ignore "deps/*"
+    \ --ignore "_build/*"
+    \ --ignore "node_modules/*"'
