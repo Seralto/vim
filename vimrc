@@ -14,6 +14,7 @@ set mouse=a
 set noswapfile
 set nowrap
 set number
+set relativenumber
 set shiftwidth=2
 set showmatch
 set signcolumn=yes
@@ -103,18 +104,13 @@ let NERDTreeMapActivateNode='<right>'
 "Size
 let g:NERDTreeWinSize=40
 
-"Resize NERDtree
-nnoremap <leader>+ 10<C-w>>
-nnoremap <leader>- 10<C-w><
-
 "----------CtrlP----------
 "Ignore stuff
-let g:ctrlp_custom_ignore = 'node_modules|git'
+let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 "Only current folder
 let g:ctrlp_working_path_mode = 'ra'
 
 "----------Autoformat----------
 noremap <F3> :Autoformat<CR>
-au BufWrite * :Autoformat
 
