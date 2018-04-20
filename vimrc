@@ -11,10 +11,10 @@ set colorcolumn=120
 set expandtab
 set hlsearch
 set mouse=a
-set noswapfile
 set nowrap
 set number
-set relativenumber
+"set relativenumber
+set hidden
 set shiftwidth=2
 set showmatch
 set signcolumn=yes
@@ -71,12 +71,6 @@ nmap <C-y> ggyG
 "IndentLine
 nnoremap <leader>/ :IndentLinesToggle<CR>
 
-"CtrlP ag
-nnoremap <c-f> :CtrlPag<cr>
-vnoremap <c-f> :CtrlPagVisual<cr>
-nnoremap <leader>ca :CtrlPagLocate
-nnoremap <leader>cp :CtrlPagPrevious<cr>
-
 "Change current directory
 map <F4> :cd %:h<CR>
 
@@ -104,6 +98,10 @@ let NERDTreeMapActivateNode='<right>'
 "Size
 let g:NERDTreeWinSize=40
 
+"Resize NERDtree
+nnoremap <leader>+ 10<C-w>>
+nnoremap <leader>- 10<C-w><
+
 "----------CtrlP----------
 "Ignore stuff
 let g:ctrlp_custom_ignore = 'node_modules\|git'
@@ -111,6 +109,16 @@ let g:ctrlp_custom_ignore = 'node_modules\|git'
 "Only current folder
 let g:ctrlp_working_path_mode = 'ra'
 
+"CtrlP ag
+nnoremap <c-f> :CtrlPag<cr>
+vnoremap <c-f> :CtrlPagVisual<cr>
+nnoremap <leader>ca :CtrlPagLocate
+nnoremap <leader>cp :CtrlPagPrevious<cr>
+
+let g:ctrlp_ag_ignores = '--ignore .git
+    \ --ignore "deps/*"
+    \ --ignore "_build/*"
+    \ --ignore "node_modules/*"'
 "----------Autoformat----------
 noremap <F3> :Autoformat<CR>
 
